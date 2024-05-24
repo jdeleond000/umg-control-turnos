@@ -7,8 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "heroku-postbuild": "export NODE_OPTIONS=--openssl-legacy-provider && ng build --prod"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -46,7 +45,7 @@
     "typescript": "~4.1.5"
   },
   "engines": {
-    "node": "14.x",
+    "node": "16.x",
     "npm": "6.x"
   }
 }
