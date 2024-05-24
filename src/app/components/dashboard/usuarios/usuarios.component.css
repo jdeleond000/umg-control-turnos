@@ -1,0 +1,103 @@
+.position {
+    text-align: center;
+}
+
+.text {
+    text-align: center;
+}
+
+.input-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.barButton {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+}
+
+.barButton button {
+    margin-left: 8px;
+    background-color: #0b69a1;
+}
+
+.inputs {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.tabla {
+    width: 100%;
+    overflow-x: auto;
+}
+
+mat-form-field {
+    min-width: 300px;
+    width: calc(100% / 3.5);
+    margin: 0 7px;
+}
+
+.tableContainer {
+    width: 100%;
+    overflow: auto;
+    overflow-x: auto;
+}
+
+mat-header-row {
+    background: hsl(226, 68%, 52%);
+}
+
+.headerCell {
+    color: white;
+    padding: 0 10px;
+    width: 100px;
+    box-sizing: border-box;
+}
+
+td div {
+    word-wrap: break-all;
+    padding: 0 10px;
+    width: 100px;
+    box-sizing: border-box;
+    word-break: break-all;
+    word-wrap: break-all;
+}
+
+.mat-header-cell {
+    border: 0 solid black !important;
+}
+
+.mat-cell {
+    border: 0 solid black !important;
+}
+
+.barButtons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 15px;
+
+}
+
+.dataGarantia {
+    z-index: 1000;
+    /* Asegura que esté por encima de la tabla */
+    width: 100%;
+    position: absolute;
+    /* Cambiado a posición absoluta */
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-end;
+    /* Cambiado a flex-end */
+    flex-wrap: wrap;
+    background-color: #fff;
+    /* Fondo blanco sin transparencia */
+    border: 1px solid #ccc;
+    /* Borde de 1 píxel sólido de color gris */
+}
