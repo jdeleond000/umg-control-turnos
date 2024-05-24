@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { RRHH, empleados } from '../general';
+import { GeneralService } from 'src/app/services/general.service';
+import { EmpleadoRH } from 'src/app/interfaces/general.interface';
 
 @Component({
   selector: 'app-rrhh',
@@ -9,11 +11,12 @@ import { RRHH, empleados } from '../general';
 })
 export class RrhhComponent implements OnInit {
 
-  constructor() { }
+  constructor(private generalService: GeneralService) { }
 
   ngOnInit(): void {
+    this.listEmpleadosRH();
   }
-  dataSource: MatTableDataSource<RRHH> =
+  dataSource: MatTableDataSource<EmpleadoRH> =
     new MatTableDataSource();
 
   displayedColumns: string[] = [
@@ -28,4 +31,10 @@ export class RrhhComponent implements OnInit {
     'estado',
     'salario'
   ];
+
+  listEmpleadosRH() {
+    this.generalService.getEmpleadosRH().subscribe((empleadoSvc: EmpleadoRH[]) => {
+      this.dataSource.data = empleadoSvc;
+    });
+  }
 }

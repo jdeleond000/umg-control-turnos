@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  GENERAL: 'https://umg-control-turnos-back-29d77974d305.herokuapp.com'
 };
 
 /*

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { empleados } from '../general';
+import { GeneralService } from 'src/app/services/general.service';
+import { Empleado } from 'src/app/interfaces/general.interface';
 
 @Component({
   selector: 'app-usuarios',
@@ -9,12 +11,14 @@ import { empleados } from '../general';
 })
 export class UsuariosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private generalService: GeneralService) { }
 
   ngOnInit(): void {
+
+    this.getEmpleados();
   }
 
-  dataSource: MatTableDataSource<empleados> =
+  dataSource: MatTableDataSource<Empleado> =
     new MatTableDataSource();
 
 
@@ -29,5 +33,11 @@ export class UsuariosComponent implements OnInit {
     'fechaContratacion',
     'estado'
   ];
+
+  getEmpleados() {
+    this.generalService.getEmpleados().subscribe((empleadoSvc: Empleado[]) => {
+      this.dataSource.data = empleadoSvc;
+    });
+  }
 
 }
