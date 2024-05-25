@@ -1,4 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MarcajeComponent } from './modals/marcaje/marcaje.component';
 
 @Component({
   selector: 'app-trabajador',
@@ -6,10 +8,11 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
   styleUrls: ['./trabajador.component.css']
 })
 export class TrabajadorComponent implements OnInit, OnDestroy {
-  time: string = '00:00:00'; // Inicializa time en la declaración
+  time: string = '00:00:00';
   intervalId: any;
 
-  constructor() { }
+  constructor(
+    public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.updateTime();
@@ -34,4 +37,18 @@ export class TrabajadorComponent implements OnInit, OnDestroy {
     };
     this.time = new Intl.DateTimeFormat('en-US', options).format(new Date());
   }
+
+  marcaje() {
+    const dialogRef = this.dialog.open(MarcajeComponent, {
+      width: '80%',
+      minWidth: '300px',
+      data: {
+      },
+      disableClose: false
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+    });
+  }
 }
+

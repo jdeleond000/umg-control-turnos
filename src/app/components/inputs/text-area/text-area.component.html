@@ -1,0 +1,42 @@
+<mat-form-field class="Field" [formGroup]="group" *ngIf="group">
+  <mat-label
+    ><ng-container *ngTemplateOutlet="linkTemplate"></ng-container>
+    <strong>*</strong></mat-label
+  >
+  <textarea
+    matInput
+    #message
+    [formControlName]="name"
+    [maxlength]="maxLength"
+    [minlength]="minLength"
+    cdkTextareaAutosize
+    #autosize="cdkTextareaAutosize"
+    [cdkAutosizeMinRows]="rangeLines[0]"
+    [cdkAutosizeMaxRows]="rangeLines[1]"
+  ></textarea>
+  <mat-error> Este campo es <strong>requerido</strong> </mat-error
+  ><mat-hint align="end">{{ message.value.length }} / {{ maxLength }}</mat-hint>
+</mat-form-field>
+
+<mat-form-field class="Field" *ngIf="!group">
+  <mat-label
+    ><ng-container *ngTemplateOutlet="linkTemplate"></ng-container>
+    <strong>*</strong></mat-label
+  >
+  <textarea
+    matInput
+    #message
+    [maxlength]="maxLength"
+    cdkTextareaAutosize
+    #autosize="cdkTextareaAutosize"
+    [cdkAutosizeMinRows]="rangeLines[0]"
+    [cdkAutosizeMaxRows]="rangeLines[1]"
+    [disabled]="disable"
+    [(ngModel)]="value"
+  ></textarea>
+  <mat-error> Este campo es <strong>requerido</strong> </mat-error
+  ><mat-hint align="end">{{ message.value.length }} / {{ maxLength }}</mat-hint>
+</mat-form-field>
+<ng-template #linkTemplate>
+  <ng-content></ng-content>
+</ng-template>

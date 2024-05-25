@@ -1,0 +1,20 @@
+<h1>Realizar marcaje</h1>
+<form [formGroup]="form">
+    <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Seleccione</mat-label>
+        <mat-select formControlName="tipoInfraccion">
+            <mat-option value="">--</mat-option>
+            <mat-option *ngFor="let tipo of catalogos" [value]="tipo">
+                {{tipo.descripcionCatalogo}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div class="barButtons">
+        <button mat-raised-button (click)="marcar()">
+            Marcar
+        </button>
+        <button mat-raised-button (click)="cancel()">
+            Cancelar
+        </button>
+    </div>
+</form>

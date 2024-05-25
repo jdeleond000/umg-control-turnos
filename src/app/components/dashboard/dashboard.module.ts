@@ -23,6 +23,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
+import { MarcajeComponent } from './trabajador/modals/marcaje/marcaje.component';
+import { AddEmpleadoComponent } from './rrhh/modals/add-empleado/add-empleado.component';
+import { TextAreaModule } from '../inputs/text-area/text-area.module';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -33,7 +36,9 @@ import { MatCardModule } from '@angular/material/card';
     AsignacionesComponent,
     TrabajadorComponent,
     VacacionesComponent,
-    RrhhComponent
+    RrhhComponent,
+    MarcajeComponent,
+    AddEmpleadoComponent
   ],
   imports: [
     CommonModule,
@@ -43,6 +48,7 @@ import { MatCardModule } from '@angular/material/card';
     HttpClientModule,
     MatListModule,
     FormsModule,
+    TextAreaModule,
     MatSelectModule,
     MatOptionModule,
     MatButtonModule,

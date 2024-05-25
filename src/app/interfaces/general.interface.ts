@@ -21,3 +21,10 @@ export interface EmpleadoRH {
     correo: string;
     tel: string;
 }
+
+export interface catalogos {
+    idCatalogo: string;
+    codigoCatalogo: string;
+    combreCatalogo: string;
+    descripcionCatalogo: string;
+}

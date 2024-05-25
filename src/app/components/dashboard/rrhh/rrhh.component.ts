@@ -3,6 +3,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { RRHH, empleados } from '../general';
 import { GeneralService } from 'src/app/services/general.service';
 import { EmpleadoRH } from 'src/app/interfaces/general.interface';
+import { MatDialog } from '@angular/material/dialog';
+import { AddEmpleadoComponent } from './modals/add-empleado/add-empleado.component';
 
 @Component({
   selector: 'app-rrhh',
@@ -11,7 +13,7 @@ import { EmpleadoRH } from 'src/app/interfaces/general.interface';
 })
 export class RrhhComponent implements OnInit {
 
-  constructor(private generalService: GeneralService) { }
+  constructor(public dialog: MatDialog, private generalService: GeneralService,) { }
 
   ngOnInit(): void {
     this.listEmpleadosRH();
@@ -37,4 +39,18 @@ export class RrhhComponent implements OnInit {
       this.dataSource.data = empleadoSvc;
     });
   }
+
+  add() {
+    const dialogRef = this.dialog.open(AddEmpleadoComponent, {
+      width: '80%',
+      minWidth: '300px',
+      data: {
+      },
+      disableClose: false
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+    });
+  }
+
 }

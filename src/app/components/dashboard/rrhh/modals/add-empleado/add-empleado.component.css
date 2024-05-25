@@ -1,0 +1,47 @@
+mat-form-field {
+    width: 100%;
+}
+
+.inputs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+table {
+    border-spacing: 30px;
+}
+
+.full-width {
+    width: 100%;
+    max-width: 100%;
+}
+
+.space {
+    line-height: 65px;
+}
+
+.barButtons {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 5px;
+    margin: 13px;
+}
+
+.barButtons button {
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.buttonsContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+.mt-10 {
+    margin-top: 10%;
+}

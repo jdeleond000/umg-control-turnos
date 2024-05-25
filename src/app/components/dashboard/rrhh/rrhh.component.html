@@ -4,6 +4,14 @@
     </mat-toolbar>
 </div>
 <br>
+<mat-card>
+    <mat-card-content>
+        <h1>Realizar marcaje</h1>
+    </mat-card-content>
+    <button mat-raised-button (click)="add()">
+        Agregar Empleado
+    </button>
+</mat-card>
 <div class="tabla">
     <section class="tableContainer">
         <table mat-table [dataSource]="dataSource" class="tableContainer">

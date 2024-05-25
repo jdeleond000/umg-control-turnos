@@ -1,0 +1,87 @@
+<H1>Añadir Empleado</H1>
+<section>
+    <form [formGroup]="form">
+        <div class="Inputform">
+            <app-text-area name="nit" [group]="form" [maxLength]="15">
+                Nit:
+            </app-text-area>
+        </div>
+
+        <div class="Inputform">
+            <app-text-area name="nombre" [group]="form" [maxLength]="50">
+                Nombre:
+            </app-text-area>
+        </div>
+
+        <div class="Inputform">
+            <app-text-area name="apellido" [group]="form" [maxLength]="50">
+                Apellido:
+            </app-text-area>
+        </div>
+
+        <div class="Inputform">
+            <app-text-area name="contrasena" [group]="form" [maxLength]="50">
+                Contraseña:
+            </app-text-area>
+        </div>
+
+        <div class="Inputform">
+            <app-text-area name="dpi" [group]="form" [maxLength]="50">
+                DPI:
+            </app-text-area>
+        </div>
+
+        <div class="Inputform">
+            <app-text-area name="correoElectronico" [group]="form" [maxLength]="255">
+                Correo Electrónico:
+            </app-text-area>
+        </div>
+
+        <div class="Inputform">
+            <app-text-area name="numeroTelefono" [group]="form" [maxLength]="20">
+                Número de Teléfono:
+            </app-text-area>
+        </div>
+
+        <div class="Inputform">
+            <app-text-area name="direccion" [group]="form" [maxLength]="50">
+                Dirección:
+            </app-text-area>
+        </div>
+
+        <div class="Inputform">
+            <app-text-area name="cargoId" [group]="form" [maxLength]="10">
+                ID de Cargo:
+            </app-text-area>
+        </div>
+
+        <div class="Inputform">
+            <app-text-area name="email" [group]="form" [maxLength]="100">
+                Email:
+            </app-text-area>
+        </div>
+
+        <div class="Inputform">
+            <app-text-area name="fechaContratacion" [group]="form" [maxLength]="200">
+                Fecha de Contratación:
+            </app-text-area>
+        </div>
+
+        <div class="Inputform">
+            <app-text-area name="salario" [group]="form" [maxLength]="200">
+                Salario:
+            </app-text-area>
+        </div>
+
+        <div class="Inputform">
+            <app-text-area name="turno" [group]="form" [maxLength]="200">
+                Turno:
+            </app-text-area>
+        </div>
+    </form>
+    <div class="barButtons">
+        <button mat-raised-button (click)="cancel()">Cancelar</button>
+        <button mat-raised-button color="satColor" (click)="send()">Guardar</button>
+
+    </div>
+</section>

@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
 import { SharedModule } from './components/shared/shared.module';
 import { DashboardModule } from './components/dashboard/dashboard.module';
-
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -22,7 +22,8 @@ import { DashboardModule } from './components/dashboard/dashboard.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     DashboardModule,
-    SharedModule
+    SharedModule,
+    MatDialogModule
 
   ],
   providers: [],
