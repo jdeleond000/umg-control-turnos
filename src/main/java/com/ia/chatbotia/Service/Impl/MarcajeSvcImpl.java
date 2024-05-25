@@ -20,10 +20,8 @@ public class MarcajeSvcImpl {
         Marcajes marcajes;
 
         if (datos.getIdMarcaje() == null || datos.getIdMarcaje() == 0) {
-            // Crear nuevo marcaje
             marcajes = new Marcajes();
         } else {
-            // Buscar marcaje existente
             Optional<Marcajes> marcajeExistente = marcajesRepository.findById(datos.getIdMarcaje());
             if (marcajeExistente.isPresent()) {
                 marcajes = marcajeExistente.get();
