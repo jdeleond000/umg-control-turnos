@@ -6,19 +6,23 @@
 package com.ia.chatbotia.dto;
 
 import java.util.Date;
+import lombok.NoArgsConstructor;
+import lombok.Data;
 
 /**
  *
  * @author jairo
  */
+@Data
+@NoArgsConstructor
 public class EmpleadoDto {
-    private Long nit;
+    private String nit;
     private String nombre;
     private String apellido;
     private String contrasena;
     private Integer dpi;
     private String correoElectronico;
-    private Integer numeroTelefono;
+    private long numeroTelefono;
     private String direccion;
     private Date fechaAdicion;
     private String usuarioAdicion;
@@ -27,8 +31,8 @@ public class EmpleadoDto {
     private Integer cargoId;
     private String email;
     private Date fechaContratacion;
-    private String salario;
-    private String estado;
+    private Long salario;
+    private long estado;
     private Integer turno_id;
     
     

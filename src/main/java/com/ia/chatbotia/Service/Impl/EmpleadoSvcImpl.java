@@ -27,18 +27,40 @@ public class EmpleadoSvcImpl {
     @Autowired
     EmpleadoRepository empleadoRepository;
     
-    public Empleados guardarEmpleado(EmpleadoDto empleado) {
-        Empleados empleados = null;
-        Timestamp fechaAhora = Timestamp.valueOf(LocalDateTime.now());
-        if (empleados.getNit() == null) {
-            empleados = new Empleados();
-        } else {
-            Optional<Empleados> solicitudesDB = empleadoRepository.findById(empleado);
-            empleados = solicitudesDB.get();
-        }
-        empleados.setDireccion(empleados.getDireccion());
-        return empleadoRepository.save(empleados);
+    public Empleados guardarEmpleado(EmpleadoDto datos) {
+    Empleados empleados;
+    Timestamp fechaAhora = Timestamp.valueOf(LocalDateTime.now());
+
+    String nit = datos.getNit();
+    
+    Optional<Empleados> empleadoExistente = empleadoRepository.findById(nit);
+
+    if (!empleadoExistente.isPresent()) {
+        empleados = new Empleados();
+        empleados.setNit(nit); 
+        empleados.setNombre(datos.getNombre());
+        empleados.setApellido(datos.getApellido());
+        empleados.setContrasena(datos.getContrasena());
+        empleados.setDpi(datos.getDpi());
+        empleados.setCorreoElectronico(datos.getCorreoElectronico());
+        empleados.setNumeroTelefono(datos.getNumeroTelefono());
+        empleados.setDireccion(datos.getDireccion());
+        empleados.setFechaAdicion(fechaAhora);
+        empleados.setUsuarioAdicion(datos.getUsuarioAdicion());
+        empleados.setCargoId(datos.getCargoId());
+        empleados.setEmail(datos.getEmail());
+        empleados.setFechaContratacion(datos.getFechaContratacion());
+        empleados.setSalario(datos.getSalario());
+        empleados.setTurno_id(datos.getTurno_id());
+        empleados.setEstado(Long.parseLong("1"));
+    } else {
+        empleados = empleadoExistente.get();
+        empleados.setFechaAdicion(fechaAhora);
+        empleados.setUsuarioModificacion(String.valueOf(datos.getNit()));
     }
+    
+    return empleadoRepository.save(empleados);
+}
     
     public List<empleadoProjection> listaEmpleado() {
         return this.empleadoRepository.showEmpleados();

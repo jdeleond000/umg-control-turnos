@@ -28,7 +28,7 @@ public class Empleados {
 
     @Id
     @Column(name = "nit")
-    private Long nit;
+    private String nit;
 
     @Column(name = "nombre")
     private String nombre;
@@ -46,7 +46,7 @@ public class Empleados {
     private String correoElectronico;
 
     @Column(name = "numero_telefono")
-    private Integer numeroTelefono;
+    private long numeroTelefono;
 
     @Column(name = "direccion")
     private String direccion;
@@ -73,10 +73,10 @@ public class Empleados {
     private Date fechaContratacion;
 
     @Column(name = "salario")
-    private String salario;
+    private Long salario;
 
     @Column(name = "estado")
-    private String estado;
+    private Long estado;
 
     @Column(name = "turno_id")
     private Integer turno_id;
