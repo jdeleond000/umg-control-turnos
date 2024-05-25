@@ -22,6 +22,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
+import { MatCardModule } from '@angular/material/card';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -48,6 +49,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatMenuModule,
     ReactiveFormsModule,
     MatTableModule,
+    MatCardModule,
     MatExpansionModule
   ]
 })
