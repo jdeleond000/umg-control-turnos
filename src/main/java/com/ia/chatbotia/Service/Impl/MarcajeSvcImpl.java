@@ -3,9 +3,11 @@ package com.ia.chatbotia.Service.Impl;
 import com.ia.chatbotia.Entity.Marcajes;
 import com.ia.chatbotia.Repository.MarcajesRepository;
 import com.ia.chatbotia.dto.MarcajesDto;
+import com.ia.chatbotia.projection.catalogoGeneral;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,5 +47,9 @@ public class MarcajeSvcImpl {
         marcajes.setFecha(fecha); 
         marcajes.setLlegadaTardia(datos.getLlegadaTardia());
         return marcajesRepository.save(marcajes);
+    }
+    
+    public List<catalogoGeneral> listCatalogo() {
+        return this.marcajesRepository.showCatalogo();
     }
 }

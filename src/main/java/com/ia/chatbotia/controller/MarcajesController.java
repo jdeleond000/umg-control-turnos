@@ -9,10 +9,14 @@ import com.ia.chatbotia.Service.Impl.MarcajeSvcImpl;
 import com.ia.chatbotia.components.Exceptiones;
 import com.ia.chatbotia.dto.MarcajesDto;
 import com.ia.chatbotia.dto.ResponseDto;
+import com.ia.chatbotia.projection.catalogoGeneral;
+import io.swagger.annotations.ApiOperation;
+import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,4 +44,10 @@ public class MarcajesController {
         }
     }
     
+    @GetMapping("/listCatalogo")
+    @ApiOperation("Muestra el listado general de catalogos")
+    public ResponseEntity<List<catalogoGeneral>> listCatalogo() {
+        List<catalogoGeneral> lista = marcajeSvcImpl.listCatalogo();
+        return ResponseEntity.ok(lista);
+    }
 }
