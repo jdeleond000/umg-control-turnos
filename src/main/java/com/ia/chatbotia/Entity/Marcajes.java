@@ -8,6 +8,8 @@ package com.ia.chatbotia.Entity;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.Getter;
@@ -22,10 +24,11 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name= "solicitudes", schema = "umg_control_turnos")
-public class Marcajes {
+@Table(name= "marcajes", schema = "umg_control_turnos")
+    public class Marcajes {
     
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_marcaje")
     private Long idMarcaje;
     
@@ -33,7 +36,7 @@ public class Marcajes {
     private String nit;
     
     @Column(name = "tipo_marcaje", unique = true, nullable = false)
-    private String tipoMarcaje;
+    private Long tipoMarcaje;
     
     @Column(name = "hora", unique = true, nullable = false)
     private Date hora;

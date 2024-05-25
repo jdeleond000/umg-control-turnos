@@ -16,8 +16,8 @@ import lombok.Data;
 public class MarcajesDto {
     private Long idMarcaje;
     private String nit;
-    private String tipoMarcaje;
-    private Date hora;
-    private Date fecha;
+    private Long tipoMarcaje;
+    private String fecha;
     private Boolean llegadaTardia;
 }
+

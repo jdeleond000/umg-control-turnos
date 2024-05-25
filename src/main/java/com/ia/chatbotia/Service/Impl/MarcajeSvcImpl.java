@@ -1,42 +1,51 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.ia.chatbotia.Service.Impl;
 
 import com.ia.chatbotia.Entity.Marcajes;
 import com.ia.chatbotia.Repository.MarcajesRepository;
 import com.ia.chatbotia.dto.MarcajesDto;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- *
- * @author jairo
- */
 @Service
 public class MarcajeSvcImpl {
-    
+
     @Autowired
-    MarcajesRepository marcajesRespository;
-    
-    public Marcajes guardarMarcajes(MarcajesDto marcajes) {
-        Marcajes marcaje = null;
-        Timestamp fechaAhora = Timestamp.valueOf(LocalDateTime.now());
-        if (marcajes.getNit() == null) {
-            marcaje = new Marcajes();
+    MarcajesRepository marcajesRepository;
+
+    public Marcajes guardarMarcajes(MarcajesDto datos) {
+        Marcajes marcajes;
+
+        if (datos.getIdMarcaje() == null || datos.getIdMarcaje() == 0) {
+            // Crear nuevo marcaje
+            marcajes = new Marcajes();
         } else {
-            Optional<Marcajes> solicitudesDB = marcajesRespository.findById(marcaje.getIdMarcaje());
-            marcaje = solicitudesDB.get();
-            //marcaje.setLlegadaTardia(solicitudes.getRevisor());
+            // Buscar marcaje existente
+            Optional<Marcajes> marcajeExistente = marcajesRepository.findById(datos.getIdMarcaje());
+            if (marcajeExistente.isPresent()) {
+                marcajes = marcajeExistente.get();
+            } else {
+                marcajes = new Marcajes(); 
+            }
         }
-        marcaje.setNit(marcaje.getNit());
-//        marcaje.setFechaRevision(solicitudes.getFechaRevision());
-//        marcaje.setComentarioRevision(solicitudes.getComentarioRevision());
-        return marcajesRespository.save(marcaje);
+
+        marcajes.setNit(datos.getNit());
+        marcajes.setTipoMarcaje(datos.getTipoMarcaje());
+        Timestamp fechaAhora = Timestamp.valueOf(LocalDateTime.now());
+        
+        java.sql.Date fecha;
+        if (datos.getFecha() != null) {
+            fecha = java.sql.Date.valueOf(LocalDate.parse(datos.getFecha()));
+        } else {
+            fecha = new java.sql.Date(fechaAhora.getTime());
+        }
+
+        marcajes.setHora(fechaAhora); 
+        marcajes.setFecha(fecha); 
+        marcajes.setLlegadaTardia(datos.getLlegadaTardia());
+        return marcajesRepository.save(marcajes);
     }
 }
