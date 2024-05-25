@@ -9,6 +9,7 @@ import com.ia.chatbotia.Service.Impl.EmpleadoSvcImpl;
 import com.ia.chatbotia.components.Exceptiones;
 import com.ia.chatbotia.dto.EmpleadoDto;
 import com.ia.chatbotia.dto.ResponseDto;
+import com.ia.chatbotia.projection.RHProjection;
 import com.ia.chatbotia.projection.empleadoProjection;
 import io.swagger.annotations.ApiOperation;
 import java.util.List;
@@ -46,8 +47,15 @@ public class EmpleadoController {
     
     @GetMapping("/listEmpleados")
     @ApiOperation("Muestra el listado general de empleados")
-    public ResponseEntity<List<empleadoProjection>> listarAduanas() {
+    public ResponseEntity<List<empleadoProjection>> listarEmpleados() {
         List<empleadoProjection> lista = empleadoSvcImpl.listaEmpleado();
+        return ResponseEntity.ok(lista);
+    }
+    
+    @GetMapping("/listEmpleadosbyRRHH")
+    @ApiOperation("Muestra el listado general de empleados para RRHH")
+    public ResponseEntity<List<RHProjection>> listaEmpleadoRH() {
+        List<RHProjection> lista = empleadoSvcImpl.listaEmpleadoRH();
         return ResponseEntity.ok(lista);
     }
     

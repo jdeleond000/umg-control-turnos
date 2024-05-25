@@ -8,6 +8,7 @@ package com.ia.chatbotia.Service.Impl;
 import com.ia.chatbotia.Entity.Empleados;
 import com.ia.chatbotia.Repository.EmpleadoRepository;
 import com.ia.chatbotia.dto.EmpleadoDto;
+import com.ia.chatbotia.projection.RHProjection;
 import com.ia.chatbotia.projection.empleadoProjection;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
@@ -41,5 +42,9 @@ public class EmpleadoSvcImpl {
     
     public List<empleadoProjection> listaEmpleado() {
         return this.empleadoRepository.showEmpleados();
+    }
+    
+    public List<RHProjection> listaEmpleadoRH() {
+        return this.empleadoRepository.showEmpleadosbyRH();
     }
 }
