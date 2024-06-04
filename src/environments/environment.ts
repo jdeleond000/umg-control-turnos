@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  GENERAL: 'https://umg-control-turnos-back-29d77974d305.herokuapp.com'
+  GENERAL: 'https://umg-control-turnos-back-29d77974d305.herokuapp.com',
+  GENERALLOCAL: 'http://localhost:8080'
 };
 
 /*

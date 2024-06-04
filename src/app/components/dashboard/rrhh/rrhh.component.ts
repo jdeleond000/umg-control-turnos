@@ -5,6 +5,7 @@ import { GeneralService } from 'src/app/services/general.service';
 import { EmpleadoRH } from 'src/app/interfaces/general.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { AddEmpleadoComponent } from './modals/add-empleado/add-empleado.component';
+import { BaseSolicitudComponent } from './modals/base-solicitud/base-solicitud.component';
 
 @Component({
   selector: 'app-rrhh',
@@ -13,7 +14,7 @@ import { AddEmpleadoComponent } from './modals/add-empleado/add-empleado.compone
 })
 export class RrhhComponent implements OnInit {
 
-  constructor(public dialog: MatDialog, private generalService: GeneralService,) { }
+  constructor(public dialog: MatDialog, private generalService: GeneralService) { }
 
   ngOnInit(): void {
     this.listEmpleadosRH();
@@ -42,15 +43,26 @@ export class RrhhComponent implements OnInit {
 
   add() {
     const dialogRef = this.dialog.open(AddEmpleadoComponent, {
-      width: '80%',
-      minWidth: '300px',
+      width: '75%',
+      minWidth: '70%',
       data: {
       },
       disableClose: false
     });
-
     dialogRef.afterClosed().subscribe(result => {
     });
   }
 
+  acciones() {
+    // const dialogRef = this.dialog.open(MarcajeComponent, {
+    //   width: '80%',
+    //   minWidth: '300px',
+    //   data: {
+    //   },
+    //   disableClose: false
+    // });
+
+    // dialogRef.afterClosed().subscribe(result => {
+    // });
+  }
 }

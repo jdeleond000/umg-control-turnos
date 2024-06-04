@@ -45,3 +45,28 @@ table {
 .mt-10 {
     margin-top: 10%;
 }
+
+.mat-dialog-container {
+    height: 80vh;
+    overflow-y: auto;
+}
+
+.dialog-content {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.mat-dialog-container {
+    height: 80vh;
+    overflow-y: auto;
+}
+
+.dialog-content {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.Inputform {
+    margin-bottom: 10px;
+    /* Para dar algo de espacio entre los campos */
+}

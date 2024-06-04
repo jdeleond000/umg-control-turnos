@@ -1,0 +1,22 @@
+.Field {
+    width: 100%;
+}
+
+.barButtons {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 5px;
+    margin: 13px;
+}
+
+.barButtons button {
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.buttonsContainer {
+    display: flex;
+    justify-content: flex-end;
+}

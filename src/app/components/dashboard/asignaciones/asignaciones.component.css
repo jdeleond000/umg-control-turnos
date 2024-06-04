@@ -1,0 +1,84 @@
+mat-form-field {
+    width: 100%;
+    margin: 5px 0;
+}
+
+.mat-search {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    column-gap: 10px;
+}
+
+
+.Inputform {
+    margin: 5px 0;
+}
+
+.barButtons {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.barButtons button {
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 18px;
+    width: auto;
+    height: auto;
+    background-color: #67b3e6;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.barButtons button:hover {
+    background-color: #FFFFFF;
+    color: #588ebe;
+}
+
+.barButtons button:active {
+    background-color: #55a6dc;
+    transition-duration: 0.5s;
+}
+
+.barButtons button:disabled {
+    background-color: #FFFFFF;
+    color: #B2B2B2;
+    border-radius: 15px;
+    width: auto;
+    margin: 5px;
+}
+
+.barButton-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-search {
+    width: 90%;
+    height: auto;
+    border-radius: 15px;
+    background-color: #0e7dcc;
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-search:hover {
+    background-color: #ffffff;
+    color: #193248;
+}
+
+/* mat-form-field {
+    margin: 5px 0;
+} */
+
+.btnDownload {
+    margin-left: 5px;
+}

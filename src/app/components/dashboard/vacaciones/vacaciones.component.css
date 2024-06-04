@@ -5,3 +5,50 @@ mat-panel-title {
 .mat-mdc-form-field+.mat-mdc-form-field {
     margin-left: 8px;
 }
+
+#bordersTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+#bordersTable th,
+#bordersTable td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    /* Agrega un borde a las celdas */
+}
+
+#bordersTable thead tr {
+    background-color: #115ce8;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+#bordersTable tbody tr {
+    background-color: #ffffff;
+    /* Fondo blanco para todas las filas */
+}
+
+#bordersTable tbody tr:hover {
+    background-color: #f1f1f1;
+    /* Fondo más claro al pasar el cursor */
+}
+
+#bordersTable td:last-child {
+    text-align: center;
+    /* Centra el contenido de la última columna */
+}
+
+.mat-icon-button {
+    padding: 0;
+    /* Quita el relleno extra de los botones de icono */
+}
+
+.mat-menu {
+    padding: 0;
+    /* Quita el relleno extra del menú */
+}

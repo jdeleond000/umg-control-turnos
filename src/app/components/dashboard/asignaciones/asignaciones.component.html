@@ -2,4 +2,57 @@
     <mat-toolbar>
         <span>Asignación de turnos</span>
     </mat-toolbar>
+    <br>
+    <section>
+        <form [formGroup]="form">
+            <div class="mat-search">
+                <mat-form-field class="wd-50">
+                    <mat-label>Ingrese cui:</mat-label>
+                    <input matInput formControlName="cui" />
+                    <mat-error *ngIf="form.get('cui')?.hasError('required')">El campo es
+                        <strong>requerido</strong></mat-error>
+                </mat-form-field>
+
+                <div class="barButton-search">
+                    <button mat-raised-button color="satColor" class="btn-search" type="button"
+                        (click)="findExpediente()">
+                        <mat-icon>search</mat-icon>
+                        Buscar
+                    </button>
+                </div>
+            </div>
+
+            <mat-form-field class="full-width">
+                <mat-label>nombre</mat-label>
+                <input formControlName="nombre" matInput />
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>apellido</mat-label>
+                <input formControlName="apellido" matInput />
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>nit</mat-label>
+                <input formControlName="nit" matInput />
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>direccion</mat-label>
+                <input formControlName="direccion" matInput />
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Tipo de turno</mat-label>
+                <mat-select formControlName="tipoSolicitud">
+                    <mat-option *ngFor="let tipo of catalogos" [value]="tipo.idCatalogo">
+                        {{tipo.descripcionCatalogo}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </form>
+        <div class="barButtons">
+            <button mat-raised-button color="satColor" [disabled]="disabledSave" (click)="saveSolicitud()">
+                <mat-icon>save</mat-icon>
+                Guardar
+            </button>
+        </div>
+    </section>
 </div>

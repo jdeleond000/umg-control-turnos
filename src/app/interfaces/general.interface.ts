@@ -28,3 +28,26 @@ export interface catalogos {
     combreCatalogo: string;
     descripcionCatalogo: string;
 }
+
+export interface dataSolicitudes {
+    idCatalogo: string;
+    descripcionCatalogo: string;
+    nombreCatalogo: string;
+}
+
+export interface catalogoRegistroSolicitud {
+    comentario: string;
+    tipoSolicitud: string;
+    estado: string;
+    fechaInicio: string;
+    fechaFin: string;
+    idSolicitud: string;
+}
+
+export interface motivo {
+    descripcion: string;
+}
+
+export interface tipoSolicitud {
+    descripcion: string;
+}

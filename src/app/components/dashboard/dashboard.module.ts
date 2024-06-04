@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
@@ -26,6 +25,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MarcajeComponent } from './trabajador/modals/marcaje/marcaje.component';
 import { AddEmpleadoComponent } from './rrhh/modals/add-empleado/add-empleado.component';
 import { TextAreaModule } from '../inputs/text-area/text-area.module';
+import { BaseSolicitudComponent } from './rrhh/modals/base-solicitud/base-solicitud.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { AddSolicitudComponent } from './vacaciones/modals/add-solicitud/add-solicitud.component';
+import { NominaComponent } from './nomina/nomina.component';
+import { LoginComponent } from '../login/login.component';
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -38,7 +42,11 @@ import { TextAreaModule } from '../inputs/text-area/text-area.module';
     VacacionesComponent,
     RrhhComponent,
     MarcajeComponent,
-    AddEmpleadoComponent
+    AddEmpleadoComponent,
+    BaseSolicitudComponent,
+    AddSolicitudComponent,
+    NominaComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
@@ -56,7 +64,9 @@ import { TextAreaModule } from '../inputs/text-area/text-area.module';
     ReactiveFormsModule,
     MatTableModule,
     MatCardModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSelectModule,
+    MatFormFieldModule
   ]
 })
 export class DashboardModule { }

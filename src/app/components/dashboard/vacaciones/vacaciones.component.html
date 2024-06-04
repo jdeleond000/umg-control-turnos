@@ -2,27 +2,49 @@
     <mat-toolbar>
         <span>Solicitudes</span>
     </mat-toolbar>
+    <br>
+    <br>
+    <br>
+    <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Solicitud de vacaciones
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <table id="bordersTable">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Tipo de solicitud</th>
+                    <th>Estado</th>
+                    <th>Fecha Inicio</th>
+                    <th>Fecha Fin</th>
+                    <th>Comentario</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let sol of solicitudes">
+                    <td>{{sol.idSolicitud}}</td>
+                    <td>{{sol.tipoSolicitud}}</td>
+                    <td>{{sol.estado}}</td>
+                    <td>{{sol.fechaInicio}}</td>
+                    <td>{{sol.fechaFin}}</td>
+                    <td>{{sol.comentario}}</td>
+                    <td>
+                        <button mat-icon-button [matMenuTriggerFor]="menu">
+                            <mat-icon>more_vert</mat-icon>
+                        </button>
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item (click)="add(sol.idSolicitud)">
+                                <mat-icon>edit</mat-icon>
+                                <span>Acciones</span>
+                            </button>
+                        </mat-menu>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </mat-expansion-panel>
+    <br>
 </div>
-<br>
-<mat-expansion-panel>
-    <mat-expansion-panel-header>
-        <mat-panel-title>
-            Solicitud de vacaciones
-        </mat-panel-title>
-    </mat-expansion-panel-header>
-</mat-expansion-panel>
-<br>
-<mat-expansion-panel>
-    <mat-expansion-panel-header>
-        <mat-panel-title>
-            Solicitud de permisos
-        </mat-panel-title>
-    </mat-expansion-panel-header>
-</mat-expansion-panel><br>
-<mat-expansion-panel>
-    <mat-expansion-panel-header>
-        <mat-panel-title>
-            Solicitud de cambio de turno
-        </mat-panel-title>
-    </mat-expansion-panel-header>
-</mat-expansion-panel>

@@ -8,6 +8,7 @@ import { AsignacionesComponent } from './asignaciones/asignaciones.component';
 import { TrabajadorComponent } from './trabajador/trabajador.component';
 import { VacacionesComponent } from './vacaciones/vacaciones.component';
 import { RrhhComponent } from './rrhh/rrhh.component';
+import { NominaComponent } from './nomina/nomina.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
       { path: 'trabajador', component: TrabajadorComponent },
       { path: 'vacaciones', component: VacacionesComponent },
       { path: 'rrhh', component: RrhhComponent },
+      { path: 'nomina', component: NominaComponent },
     ]
   },
 
