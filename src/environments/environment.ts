@@ -7,7 +7,6 @@ export const environment = {
   GENERAL: 'https://umg-control-turnos-back-29d77974d305.herokuapp.com',
   GENERALLOCAL: 'http://localhost:8080'
 };
-
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
