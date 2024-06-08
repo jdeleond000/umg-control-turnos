@@ -18,6 +18,7 @@ export class RrhhComponent implements OnInit {
 
   ngOnInit(): void {
     this.listEmpleadosRH();
+    this.add();
   }
   dataSource: MatTableDataSource<EmpleadoRH> =
     new MatTableDataSource();

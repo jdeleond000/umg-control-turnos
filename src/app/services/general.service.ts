@@ -12,6 +12,7 @@ export class GeneralService {
   constructor(private httpClient: HttpClient) { }
 
   urlBase: string = `${environment.GENERAL}`;
+  urlBaseLocal: string = `${environment.GENERALLOCAL}`;
 
   getEmpleados(): Observable<Empleado[]> {
     return this.httpClient.get<Empleado[]>(`${this.urlBase}/empleados/listEmpleados`);
@@ -32,7 +33,7 @@ export class GeneralService {
 
   login(datos: any): Observable<any> {
     return this.httpClient
-      .post(`${this.urlBase}/empleados/login`, datos);
+      .post(`${this.urlBaseLocal}/empleados/login`, datos);
   }
 
   postEmpleadoSave(datos: any): Observable<any> {
@@ -48,27 +49,31 @@ export class GeneralService {
 
   getcatalogoRegistroSolicitud(nit: string): Observable<catalogoRegistroSolicitud[]> {
     return this.httpClient.get<catalogoRegistroSolicitud[]>(
-      `${this.urlBase}/solicitudes/catalogoRegistroSolicitud/${nit}`,
+      `${this.urlBaseLocal}/solicitudes/catalogoRegistroSolicitud/${nit}`,
     );
   }
 
   autorizarRechazar(comentario: string, estado: string, id: number) {
     return this.httpClient.put(
-      `${this.urlBase}/solicitudes/autorizarRechazarSolicitud/${comentario}/${estado}/${id}`,
+      `${this.urlBaseLocal}/solicitudes/autorizarRechazarSolicitud/${comentario}/${estado}/${id}`,
       {}
     );
   }
 
   getEmpleadosSearch(cui: string): Observable<Empleado[]> {
     return this.httpClient.get<Empleado[]>(
-      `${this.urlBase}/solicitudes/empleadoSearch/${cui}`,
+      `${this.urlBaseLocal}/solicitudes/empleadoSearch/${cui}`,
     );
   }
 
   updateTurno(turno: number, nit: string) {
     return this.httpClient.put(
-      `${this.urlBase}/solicitudes/updateTurno/${turno}/${nit}`,
+      `${this.urlBaseLocal}/solicitudes/updateTurno/${turno}/${nit}`,
       {}
     );
+  }
+
+  getCatalogoSearch(codigoCatalogo: number): Observable<catalogos[]> {
+    return this.httpClient.get<catalogos[]>(`${this.urlBaseLocal}/solicitudes/catalogoSearch/${codigoCatalogo}`);
   }
 }

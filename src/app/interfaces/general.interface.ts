@@ -10,7 +10,7 @@ export interface Empleado {
     tel: string;
 }
 
-export interface EmpleadoRH {
+export interface Empleado {
     estado: string;
     nit: string;
     direccion: string;
@@ -19,13 +19,30 @@ export interface EmpleadoRH {
     apellido: string;
     dpi: string;
     correo: string;
-    tel: string;
+    telefono: string;
+    salario: number;
 }
+
+export interface EmpleadoRH extends Empleado {
+    iva?: number;
+    igss?: number;
+    totalDevengado?: number;
+}
+
+
+
 
 export interface catalogos {
     idCatalogo: string;
     codigoCatalogo: string;
-    combreCatalogo: string;
+    nombreCatalogo: string;
+    descripcionCatalogo: string;
+}
+
+export interface catalogosPuesto {
+    idCatalogo: string;
+    codigoCatalogo: string;
+    nombreCatalogo: string;
     descripcionCatalogo: string;
 }
 

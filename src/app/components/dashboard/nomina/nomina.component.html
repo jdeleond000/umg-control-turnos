@@ -2,4 +2,136 @@
     <mat-toolbar>
         <span>Modulo de nomina</span>
     </mat-toolbar>
+    <br>
+    <button mat-raised-button (click)="export()">
+        Exportar en Excel
+    </button>
+    <br>
+    <br>
+    <div class="tabla">
+        <section class="tableContainer">
+            <table mat-table [dataSource]="dataSource" class="tableContainer">
+
+                <ng-container matColumnDef="nit">
+                    <th mat-header-cell *matHeaderCellDef class="tableContainer">
+                        <div class="headerCell">Nit</div>
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="tableContainer">
+                        <div>{{ element.nit }}</div>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="nombre">
+                    <th mat-header-cell *matHeaderCellDef class="tableContainer">
+                        <div class="headerCell">Nombre</div>
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="tableContainer">
+                        <div>{{ element.nombre }}</div>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="apellido">
+                    <th mat-header-cell *matHeaderCellDef class="tableContainer">
+                        <div class="headerCell">Apellido</div>
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="tableContainer">
+                        <div>{{ element.apellido }}</div>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="dpi">
+                    <th mat-header-cell *matHeaderCellDef class="tableContainer">
+                        <div class="headerCell">DPI</div>
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="tableContainer">
+                        <div>{{ element.dpi }}</div>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="correo">
+                    <th mat-header-cell *matHeaderCellDef class="tableContainer">
+                        <div class="headerCell">Correo</div>
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="tableContainer">
+                        <div>{{ element.correo }}</div>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="telefono">
+                    <th mat-header-cell *matHeaderCellDef class="tableContainer">
+                        <div class="headerCell">Teléfono</div>
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="tableContainer">
+                        <div>{{ element.telefono }}</div>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="direccion">
+                    <th mat-header-cell *matHeaderCellDef class="tableContainer">
+                        <div class="headerCell">Dirección</div>
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="tableContainer">
+                        <div>{{ element.direccion }}</div>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="fechaContratacion">
+                    <th mat-header-cell *matHeaderCellDef class="tableContainer">
+                        <div class="headerCell">Fecha Contratación</div>
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="tableContainer">
+                        <div>{{ element.fechaContratacion }}</div>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="estado">
+                    <th mat-header-cell *matHeaderCellDef class="tableContainer">
+                        <div class="headerCell">Estado</div>
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="tableContainer">
+                        <div>{{ element.estado }}</div>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="salario">
+                    <th mat-header-cell *matHeaderCellDef class="tableContainer">
+                        <div class="headerCell">Salario</div>
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="tableContainer">
+                        <div>{{ element.salario | currency:'GTQ' }}</div>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="iva">
+                    <th mat-header-cell *matHeaderCellDef class="tableContainer">
+                        <div class="headerCell">IVA</div>
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="tableContainer">
+                        <div>{{ element.iva | currency:'GTQ' }}</div>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="igss">
+                    <th mat-header-cell *matHeaderCellDef class="tableContainer">
+                        <div class="headerCell">IGSS</div>
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="tableContainer">
+                        <div>{{ element.igss | currency:'GTQ' }}</div>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="totalDevengado">
+                    <th mat-header-cell *matHeaderCellDef class="tableContainer">
+                        <div class="headerCell">Total Devengado</div>
+                    </th>
+                    <td mat-cell *matCellDef="let element" class="tableContainer">
+                        <div>{{ element.totalDevengado | currency:'GTQ' }}</div>
+                    </td>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+            </table>
+        </section>
+    </div>
 </div>

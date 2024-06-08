@@ -34,10 +34,6 @@
         </div>
 
         <div class="Inputform">
-            <app-text-area name="cargoId" [group]="form" [maxLength]="10">ID de Cargo:</app-text-area>
-        </div>
-
-        <div class="Inputform">
             <app-text-area name="email" [group]="form" [maxLength]="100">Email:</app-text-area>
         </div>
 
@@ -50,12 +46,26 @@
             <app-text-area name="salario" [group]="form" [maxLength]="200">Salario:</app-text-area>
         </div>
 
-        <div class="Inputform">
-            <app-text-area name="turno" [group]="form" [maxLength]="200">Turno:</app-text-area>
-        </div>
+        <mat-form-field>
+            <mat-label>Cargo</mat-label>
+            <mat-select formControlName="cargo">
+                <mat-option *ngFor="let tipo of catalogoss" [value]="tipo">
+                    {{tipo.descripcionCatalogo}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Turno</mat-label>
+            <mat-select formControlName="turno">
+                <mat-option *ngFor="let tipo of catalogos" [value]="tipo.idCatalogo">
+                    {{tipo.descripcionCatalogo}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
     </form>
     <div class="barButtons">
         <button mat-raised-button (click)="cancel()">Cancelar</button>
-        <button mat-raised-button color="satColor">Guardar</button>
+        <button mat-raised-button (click)="saveEmpleado()">Guardar</button>
     </div>
 </section>
